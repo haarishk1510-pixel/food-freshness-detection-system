@@ -1,7 +1,7 @@
 venv/
+dataset/
 __pycache__/
 *.pyc
 .DS_Store
-model/*.h5
 database/*.db
-dataset/
+model/*.h5
