@@ -1,0 +1,28 @@
+.result-card h1{
+    margin-bottom:25px;
+}
+
+.result-card h2{
+    margin:15px 0;
+}
+
+.result-card h3{
+    margin:12px 0;
+}
+
+.dashboard h1{
+    margin-bottom:25px;
+}
+
+canvas{
+    max-width:400px;
+    margin:auto;
+}
+
+.feature-card table{
+    margin-top:20px;
+}
+
+.feature-card{
+    overflow:auto;
+}

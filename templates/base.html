@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Freshness AI</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍎 Food Freshness AI
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/dashboard">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="/admin">Admin</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Food Freshness AI |
+            Final Year Project |
+            CNN + Flask + SQLite
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

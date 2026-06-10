@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="result-card">
+
+    <h1>Prediction Result</h1>
+
+    <img src="/{{ image_path }}" alt="Food Image">
+
+    <h2>
+        Prediction:
+        <span class="{% if result=='Fresh' %}fresh{% else %}spoiled{% endif %}">
+            {{ result }}
+        </span>
+    </h2>
+
+    <h3>Confidence: {{ confidence }}%</h3>
+
+    <div style="margin:20px 0;">
+        <div style="
+            width:80%;
+            margin:auto;
+            background:#1e293b;
+            border-radius:20px;
+            overflow:hidden;
+        ">
+            <div style="
+                width:{{ confidence }}%;
+                background:#22c55e;
+                padding:10px;
+            ">
+            </div>
+        </div>
+    </div>
+
+    <h3>📅 Shelf Life: {{ shelf_life }} Days</h3>
+
+    <h3>⏳ Expiry Date: {{ expiry_date }}</h3>
+
+    <div class="feature-card" style="margin-top:25px;">
+        <h3>♻ Food Insight</h3>
+        <p>{{ advice }}</p>
+    </div>
+
+    <br>
+
+    <a href="/" class="btn">Predict Another Image</a>
+
+    <a href="/dashboard" class="btn" style="background:#38bdf8;">
+        Dashboard
+    </a>
+
+</div>
+
+{% endblock %}

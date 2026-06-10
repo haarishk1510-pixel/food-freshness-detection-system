@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <h1 style="text-align:center;margin-bottom:40px;">
+        📊 Analytics Dashboard
+    </h1>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h1>{{ total }}</h1>
+            <p>Total Predictions</p>
+        </div>
+
+        <div class="stat-card">
+            <h1 style="color:#22c55e;">
+                {{ fresh }}
+            </h1>
+            <p>Fresh</p>
+        </div>
+
+        <div class="stat-card">
+            <h1 style="color:#ef4444;">
+                {{ spoiled }}
+            </h1>
+            <p>Spoiled</p>
+        </div>
+
+    </div>
+
+    <div class="feature-card">
+
+        <h2>📈 Prediction Analytics</h2>
+
+        <canvas id="myChart"></canvas>
+
+    </div>
+
+    <br><br>
+
+    <div class="feature-card">
+
+        <h2>Prediction History</h2>
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Result</th>
+                <th>Confidence</th>
+                <th>Time</th>
+            </tr>
+
+            {% for row in data %}
+            <tr>
+
+                <td>{{ row[0] }}</td>
+
+                <td>{{ row[1] }}</td>
+
+                <td>
+                    {% if row[2] == "Fresh" %}
+                    <span class="fresh">Fresh</span>
+                    {% else %}
+                    <span class="spoiled">Spoiled</span>
+                    {% endif %}
+                </td>
+
+                <td>{{ "%.2f"|format(row[3]) }}%</td>
+
+                <td>{{ row[4] }}</td>
+
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+new Chart(
+document.getElementById('myChart'),
+{
+type:'doughnut',
+
+data:{
+
+labels:['Fresh','Spoiled'],
+
+datasets:[{
+
+data:[
+{{ fresh }},
+{{ spoiled }}
+]
+
+}]
+}
+});
+
+</script>
+
+{% endblock %}

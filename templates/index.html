@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>AI Powered Food Freshness Detection</h1>
+
+        <p>
+            Upload food images and instantly detect freshness,
+            confidence score, shelf life estimation and food waste insights.
+        </p>
+
+        <div class="upload-box">
+
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+
+                <input
+                    type="file"
+                    name="file"
+                    required
+                    id="fileInput"
+                >
+
+                <button type="submit" class="btn">
+                    🚀 Analyze Food
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-card">
+        <h2>🤖 AI Model</h2>
+        <p>Deep Learning CNN Prediction Engine</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>📊 Analytics</h2>
+        <p>Prediction History & Dashboard Insights</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>🗄 Database</h2>
+        <p>SQLite Powered Storage System</p>
+    </div>
+
+    <div class="feature-card">
+        <h2>♻ Waste Insights</h2>
+        <p>Reduce Food Waste Using AI</p>
+    </div>
+
+</section>
+
+<section class="about">
+
+    <h2>Why Food Freshness AI?</h2>
+
+    <p>
+        Food waste is a global challenge. Our AI model helps identify
+        whether fruits and vegetables are fresh or spoiled,
+        enabling better inventory management and reducing waste.
+    </p>
+
+</section>
+
+{% endblock %}
