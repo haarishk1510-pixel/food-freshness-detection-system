@@ -1,7 +1,5 @@
 venv/
 dataset/
-__pycache__/
-*.pyc
-.DS_Store
-database/*.db
-model/*.h5
+dataset_backup/
+*.h5
+.ipynb_checkpoints/
